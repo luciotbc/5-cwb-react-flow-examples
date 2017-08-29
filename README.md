@@ -11,21 +11,44 @@ Original project [video_browser](https://github.com/StephenGrider/ReduxCasts/tre
 
 ### 2 [Primitive types](https://github.com/luciotbc/react-cwb4-flow-examples/pull/2)
 #### Add type to props
-`
+```
 type Props = {
   onSearchTermChange: string => void
 };
-`
+```
 #### Add type to state
-`
+```
 type State = {
   term: string
 };
-`
+```
 #### Add DefaultValue to state
-`
+```
 state = {
     term: ''
   };
-`
+```
 
+### 3 Object Types
+#### Create Video Type
+```
+type Video = {
+  snippet: {
+    title: string,
+    thumbnails: {
+      default: {
+        url: string
+      }
+    }
+  }
+};
+```
+#### Add Video Type to props
+```
+type Porps = {
+  video: Video,
+  onVideoSelect: Video => void
+};
+```
+#### Ref props types in a function
+`const VideoListItem = ({ video, onVideoSelect }: Porps) => {...`
