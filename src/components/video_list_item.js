@@ -1,6 +1,23 @@
+//@flow
 import React from 'react';
 
-const VideoListItem = ({ video, onVideoSelect }) => {
+type Video = {
+  snippet: {
+    title: string,
+    thumbnails: {
+      default: {
+        url: string
+      }
+    }
+  }
+};
+
+type Porps = {
+  video: Video,
+  onVideoSelect: Video => void
+};
+
+const VideoListItem = ({ video, onVideoSelect }: Porps) => {
   const imageUrl = video.snippet.thumbnails.default.url;
 
   return (
