@@ -2,6 +2,7 @@
 import React from 'react';
 
 type Video = {
+  etag: string,
   snippet: {
     title: string,
     thumbnails: {
@@ -12,12 +13,12 @@ type Video = {
   }
 };
 
-type Porps = {
+type Props = {
   video: Video,
   onVideoSelect: Video => void
 };
 
-const VideoListItem = ({ video, onVideoSelect }: Porps) => {
+const VideoListItem = ({ video, onVideoSelect }: Props) => {
   const imageUrl = video.snippet.thumbnails.default.url;
 
   return (
