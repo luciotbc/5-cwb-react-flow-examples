@@ -9,3 +9,23 @@ Original project [video_browser](https://github.com/StephenGrider/ReduxCasts/tre
 #### Run Flow
 `yarn flow`
 
+### 2 [Primitive types](https://github.com/luciotbc/react-cwb4-flow-examples/pull/2)
+#### Add type to props
+`
+type Props = {
+  onSearchTermChange: string => void
+};
+`
+#### Add type to state
+`
+type State = {
+  term: string
+};
+`
+#### Add DefaultValue to state
+`
+state = {
+    term: ''
+  };
+`
+
