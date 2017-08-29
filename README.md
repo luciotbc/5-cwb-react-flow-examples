@@ -9,7 +9,7 @@ Original project [video_browser](https://github.com/StephenGrider/ReduxCasts/tre
 #### Run Flow
 `yarn flow`
 
-### 2 [Primitive types](https://github.com/luciotbc/react-cwb4-flow-examples/pull/2)
+### 2 [Primitive Types](https://github.com/luciotbc/react-cwb4-flow-examples/pull/2)
 #### Add type to props
 ```
 type Props = {
@@ -29,7 +29,7 @@ state = {
   };
 ```
 
-### 3 Object Types
+### 3 [Object Types](https://github.com/luciotbc/react-cwb4-flow-examples/pull/2)
 #### Create Video Type
 ```
 type Video = {
