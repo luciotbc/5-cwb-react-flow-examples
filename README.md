@@ -73,3 +73,24 @@ type Props = {
   onVideoSelect: Video => void
 };
 ```
+
+### 5 [Module Types](https://github.com/luciotbc/react-cwb4-flow-examples/pull/5/files)
+#### Export shared types
+```
+//@flow
+export type Video = {
+  etag: string,
+  snippet: {
+    title: string,
+    thumbnails: {
+      default: {
+        url: string
+      }
+    }
+  }
+};
+```
+#### Import shared types
+`
+import type { Video } from '../model'
+`
