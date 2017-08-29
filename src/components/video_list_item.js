@@ -1,17 +1,6 @@
 //@flow
 import React from 'react';
-
-type Video = {
-  etag: string,
-  snippet: {
-    title: string,
-    thumbnails: {
-      default: {
-        url: string
-      }
-    }
-  }
-};
+import type { Video } from '../model'
 
 type Props = {
   video: Video,
