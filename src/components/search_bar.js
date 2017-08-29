@@ -5,7 +5,11 @@ type Props = {
   onSearchTermChange: string => void
 };
 
-class SearchBar extends Component<Props> {
+type State = {
+  term: string
+};
+
+class SearchBar extends Component<Props, State> {
   constructor(props: Props) {
     super(props);
     this.state = { term: '' };
