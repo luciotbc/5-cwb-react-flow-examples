@@ -10,10 +10,9 @@ type State = {
 };
 
 class SearchBar extends Component<Props, State> {
-  constructor(props: Props) {
-    super(props);
-    this.state = { term: '' };
-  }
+  state = {
+    term: ''
+  };
 
   render() {
     return (
