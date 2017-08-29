@@ -1,9 +1,13 @@
+// @flow
 import React, { Component } from 'react';
 
-class SearchBar extends Component {
-  constructor(props) {
-    super(props);
+type Props = {
+  onSearchTermChange: string => void
+};
 
+class SearchBar extends Component<Props> {
+  constructor(props: Props) {
+    super(props);
     this.state = { term: '' };
   }
 
@@ -15,7 +19,7 @@ class SearchBar extends Component {
     );
   }
 
-  onInputChange(term) {
+  onInputChange(term: string) {
     this.setState({ term });
     this.props.onSearchTermChange(term);
   }
