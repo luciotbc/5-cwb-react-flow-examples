@@ -1,3 +1,4 @@
+//@flow
 import React, { Component } from 'react';
 
 import _ from 'lodash';
@@ -5,21 +6,24 @@ import YTSearch from 'youtube-api-search';
 import SearchBar from './components/search_bar';
 import VideoList from './components/video_list';
 import VideoDetail from './components/video_detail';
+import type { Video } from './model';
+
 const API_KEY = 'AIzaSyAuQCVeNfKhtRk9KlChQPT1nO27DPO_5Ss';
 
-class App extends Component {
-  constructor(props) {
-    super(props);
+type Props = {};
 
-    this.state = {
-      videos: [],
-      selectedVideo: null
-    };
+type State = {
+  videos: Array<Video>,
+  selectedVideo: Video
+};
 
-    this.videoSearch('surfboards');
-  }
+class App extends Component<Props, State> {
+  static state = {
+    videos: [],
+    selectedVideo: null
+  };
 
-  videoSearch(term) {
+  videoSearch(term: string) {
     YTSearch({ key: API_KEY, term: term }, videos => {
       this.setState({
         videos: videos,
