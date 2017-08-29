@@ -1,6 +1,14 @@
+//@flow
 import React from 'react';
+import type { Video } from '../model';
 
-const VideoDetail = ({ video }) => {
+type Props = {
+  video: Video
+};
+
+const VideoDetail = (props: Props) => {
+  const { video } = props;
+
   if (!video) {
     return <div>Loading...</div>;
   }
