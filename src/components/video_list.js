@@ -1,16 +1,39 @@
+//@flow
 import React from 'react';
-import VideoListItem from './video_list_item';
 
-const VideoList = props => {
-  const videoItems = props.videos.map(video => {
-    return <VideoListItem onVideoSelect={props.onVideoSelect} key={video.etag} video={video} />;
-  });
+type Video = {
+  snippet: {
+    title: string,
+    thumbnails: {
+      default: {
+        url: string
+      }
+    }
+  }
+};
+
+type Porps = {
+  video: Video,
+  onVideoSelect: Video => void
+};
+
+const VideoListItem = ({ video, onVideoSelect }: Porps) => {
+  const imageUrl = video.snippet.thumbnails.default.url;
 
   return (
-    <ul className="col-md-4 list-group">
-      {videoItems}
-    </ul>
+    <li onClick={() => onVideoSelect(video)} className="list-group-item">
+      <div className="video-list media">
+        <div className="media-left">
+          <img className="media-object" src={imageUrl} />
+        </div>
+        <div className="media-body">
+          <div className="media-heading">
+            {video.snippet.title}
+          </div>
+        </div>
+      </div>
+    </li>
   );
 };
 
-export default VideoList;
+export default VideoListItem;
