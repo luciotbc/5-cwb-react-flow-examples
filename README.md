@@ -2,14 +2,14 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 Original project [video_browser](https://github.com/StephenGrider/ReduxCasts/tree/master/video_browser).
 
-### 1 [Install Flow](https://github.com/luciotbc/react-cwb4-flow-examples/pull/1)
+### 1 [Install Flow](https://github.com/luciotbc/react-cwb4-flow-examples/pull/1/files)
 #### Install Flow
 `yarn add --dev flow-bin`
 `yarn run flow init`
 #### Run Flow
 `yarn flow`
 
-### 2 [Primitive Types](https://github.com/luciotbc/react-cwb4-flow-examples/pull/2)
+### 2 [Primitive Types](https://github.com/luciotbc/react-cwb4-flow-examples/pull/2/files)
 #### Add type to props
 ```
 type Props = {
@@ -29,7 +29,7 @@ state = {
   };
 ```
 
-### 3 [Object Types](https://github.com/luciotbc/react-cwb4-flow-examples/pull/2)
+### 3 [Object Types](https://github.com/luciotbc/react-cwb4-flow-examples/pull/3/files)
 #### Create Video Type
 ```
 type Video = {
@@ -52,3 +52,24 @@ type Porps = {
 ```
 #### Ref props types in a function
 `const VideoListItem = ({ video, onVideoSelect }: Porps) => {...`
+
+### 4 [Array Types](https://github.com/luciotbc/react-cwb4-flow-examples/pull/4/files)
+#### Create Video Type
+```
+type Video = {
+  etag: string,
+  snippet: {
+    title: string,
+    thumbnails: {
+      default: {
+        url: string
+      }
+    }
+  }
+};
+
+type Props = {
+  videos: Array<Video>,
+  onVideoSelect: Video => void
+};
+```
