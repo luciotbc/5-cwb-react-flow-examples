@@ -1,13 +1,24 @@
 //@flow
 import React from 'react';
-import type { Video } from './../model';
 
-type Porps = {
+type Video = {
+  etag: string,
+  snippet: {
+    title: string,
+    thumbnails: {
+      default: {
+        url: string
+      }
+    }
+  }
+};
+
+type Props = {
   video: Video,
   onVideoSelect: Video => void
 };
 
-const VideoListItem = ({ video, onVideoSelect }: Porps) => {
+const VideoListItem = ({ video, onVideoSelect }: Props) => {
   const imageUrl = video.snippet.thumbnails.default.url;
 
   return (
