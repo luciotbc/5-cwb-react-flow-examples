@@ -1,16 +1,6 @@
 //@flow
 import React from 'react';
-
-type Video = {
-  snippet: {
-    title: string,
-    thumbnails: {
-      default: {
-        url: string
-      }
-    }
-  }
-};
+import type { Video } from './../model';
 
 type Porps = {
   video: Video,
