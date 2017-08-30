@@ -1,6 +1,6 @@
 //@flow
 import React, { Component } from 'react';
-import type { JsEvent } from '../model';
+
 type Props = {
   onSearchTermChange: string => void
 };
@@ -14,8 +14,9 @@ class SearchBar extends Component<Props, State> {
     term: ''
   };
 
-  videoSelected = (e: JsEvent) => {
+  videoSelected = (e: SyntheticInputEvent<EventTarget>) => {
     e.preventDefault();
+    e.stopPropagation();
     this.onInputChange(e.target.value);
   };
 
