@@ -1,5 +1,5 @@
 //@flow
-import React, { Component } from 'react';
+import React from 'react';
 
 import _ from 'lodash';
 import YTSearch from 'youtube-api-search';
@@ -14,14 +14,19 @@ type Props = {};
 
 type State = {
   videos: Array<Video>,
-  selectedVideo: Video
+  selectedVideo?: Video
 };
 
-class App extends Component<Props, State> {
-  static state = {
+class App extends React.Component<Props, State> {
+  state = {
     videos: [],
-    selectedVideo: null
+    selectedVideo: undefined
   };
+
+  constructor(props: Props) {
+    super(props);
+    this.videoSearch('react conf');
+  }
 
   videoSearch(term: string) {
     YTSearch({ key: API_KEY, term: term }, videos => {
