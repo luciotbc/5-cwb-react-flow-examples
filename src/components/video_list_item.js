@@ -1,6 +1,6 @@
 //@flow
 import React from 'react';
-import type { Video, JsEvent } from '../model';
+import type { Video } from '../model';
 
 type Props = {
   video: Video,
@@ -8,7 +8,7 @@ type Props = {
 };
 
 const VideoListItem = (props: Props) => {
-  const videoSelected = (e: JsEvent) => {
+  const videoSelected = (e: SyntheticEvent<EventTarget>) => {
     e.preventDefault();
     props.onVideoSelect(props.video);
   };
