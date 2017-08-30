@@ -3,17 +3,15 @@ import React from 'react';
 import type { Video } from '../model';
 
 type Props = {
-  video: Video
+  video?: Video
 };
 
 const VideoDetail = (props: Props) => {
-  const { video } = props;
-
-  if (!video) {
+  if (!props.video) {
     return <div>Loading...</div>;
   }
 
-  const videoId = video.id.videoId;
+  const videoId = props.video.id.videoId;
   const url = `https://www.youtube.com/embed/${videoId}`;
 
   return (
@@ -23,10 +21,10 @@ const VideoDetail = (props: Props) => {
       </div>
       <div className="details">
         <div>
-          {video.snippet.title}
+          {props.video.snippet.title}
         </div>
         <div>
-          {video.snippet.description}
+          {props.video.snippet.description}
         </div>
       </div>
     </div>
