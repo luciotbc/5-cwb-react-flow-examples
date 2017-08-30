@@ -99,19 +99,19 @@ import type { Video } from '../model'
 ![flow everywhere](https://i.imgflip.com/1uyk9c.jpg)
 
 #### [7 Add JsEvents](https://github.com/luciotbc/react-cwb4-flow-examples/pull/7/files)
-##### Export shared types
+##### To Clicks
 ```
-export type JsEvent = {
-  preventDefault: () => void,
-  target: {
-    value: string
-  }
-};
-```
-##### Using
-```
-  const videoSelected = (e: JsEvent) => {
+  const videoSelected = (e: SyntheticEvent<EventTarget>) => {
     e.preventDefault();
     props.onVideoSelect(props.video);
+  };
+
+};
+```
+##### To Inputs
+```
+  videoSelected = (e: SyntheticInputEvent<EventTarget>) => {
+    e.preventDefault();
+    this.onInputChange(e.target.value);
   };
 ```

@@ -16,7 +16,6 @@ class SearchBar extends Component<Props, State> {
 
   videoSelected = (e: SyntheticInputEvent<EventTarget>) => {
     e.preventDefault();
-    e.stopPropagation();
     this.onInputChange(e.target.value);
   };
 
