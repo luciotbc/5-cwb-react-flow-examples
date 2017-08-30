@@ -1,6 +1,6 @@
 //@flow
 import React from 'react';
-import type { Video } from '../model';
+import type { Video, JsEvent } from '../model';
 
 type Props = {
   video: Video,
@@ -8,13 +8,16 @@ type Props = {
 };
 
 const VideoListItem = (props: Props) => {
-  const imageUrl = props.video.snippet.thumbnails.default.url;
+  const videoSelected = (e: JsEvent) => {
+    e.preventDefault();
+    props.onVideoSelect(props.video);
+  };
 
   return (
-    <li onClick={() => props.onVideoSelect(props.video)} className="list-group-item">
+    <li onClick={videoSelected} className="list-group-item">
       <div className="video-list media">
         <div className="media-left">
-          <img className="media-object" src={imageUrl} />
+          <img className="media-object" src={props.video.snippet.thumbnails.default.url} />
         </div>
         <div className="media-body">
           <div className="media-heading">

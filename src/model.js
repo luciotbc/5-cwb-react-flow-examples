@@ -14,3 +14,10 @@ export type Video = {
     }
   }
 };
+
+export type JsEvent = {
+  preventDefault: () => void,
+  target: {
+    value: string
+  }
+};
