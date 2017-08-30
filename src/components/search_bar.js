@@ -1,6 +1,6 @@
 //@flow
 import React, { Component } from 'react';
-
+import type { JsEvent } from '../model';
 type Props = {
   onSearchTermChange: string => void
 };
@@ -14,17 +14,22 @@ class SearchBar extends Component<Props, State> {
     term: ''
   };
 
+  videoSelected = (e: JsEvent) => {
+    e.preventDefault();
+    this.onInputChange(e.target.value);
+  };
+
+  onInputChange = (term: string) => {
+    this.setState({ term });
+    this.props.onSearchTermChange(term);
+  };
+
   render() {
     return (
       <div className="search-bar">
-        <input value={this.state.term} onChange={event => this.onInputChange(event.target.value)} />
+        <input value={this.state.term} onChange={this.videoSelected} />
       </div>
     );
-  }
-
-  onInputChange(term: string) {
-    this.setState({ term });
-    this.props.onSearchTermChange(term);
   }
 }
 
