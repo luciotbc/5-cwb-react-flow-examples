@@ -1,11 +1,17 @@
+//@flow
 import React from 'react';
+import type { Video } from '../model';
 
-const VideoDetail = ({ video }) => {
-  if (!video) {
+type Props = {
+  video?: Video
+};
+
+const VideoDetail = (props: Props) => {
+  if (!props.video) {
     return <div>Loading...</div>;
   }
 
-  const videoId = video.id.videoId;
+  const videoId = props.video.id.videoId;
   const url = `https://www.youtube.com/embed/${videoId}`;
 
   return (
@@ -15,10 +21,10 @@ const VideoDetail = ({ video }) => {
       </div>
       <div className="details">
         <div>
-          {video.snippet.title}
+          {props.video.snippet.title}
         </div>
         <div>
-          {video.snippet.description}
+          {props.video.snippet.description}
         </div>
       </div>
     </div>
