@@ -1,36 +1,45 @@
-This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
+# 5-cwb-react-flow-examples
+* [Slides](https://docs.google.com/presentation/d/1qqdOdJJlhhdvkzlnuelB4FFlBFJoDAvI9TLShtUbuBY/edit?usp=sharing)
+* This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app)
+* Original project [video_browser](https://github.com/StephenGrider/ReduxCasts/tree/master/video_browser)
 
-Original project [video_browser](https://github.com/StephenGrider/ReduxCasts/tree/master/video_browser).
+References
+* [Flow site](https://flow.org)
+* [GitHub Flow](https://github.com/facebook/flow)
+* [Flow type cheat sheet](https://www.saltycrane.com/flow-type-cheat-sheet/latest/)
 
-#### [1 Install Flow](https://github.com/luciotbc/react-cwb4-flow-examples/pull/1/files)
-##### Install Flow
-`yarn add --dev flow-bin`
-`yarn run flow init`
-##### Run Flow
-`yarn flow`
+## Tutorial
+### [1 Install Flow](https://github.com/luciotbc/react-cwb4-flow-examples/pull/1/files)
+Install Flow:
+```yarn add --dev flow-bin```
+```yarn run flow init```
 
-#### [2 Primitive Types](https://github.com/luciotbc/react-cwb4-flow-examples/pull/2/files)
-##### Add type to props
+Run Flow:
+```yarn flow```
+
+### [2 Primitive Types](https://github.com/luciotbc/react-cwb4-flow-examples/pull/2/files)
+Add type to props
 ```
 type Props = {
   onSearchTermChange: string => void
 };
 ```
-##### Add type to state
+
+Add type to state
 ```
 type State = {
   term: string
 };
 ```
-##### Add DefaultValue to state
+Add DefaultValue to state
 ```
 state = {
     term: ''
   };
 ```
 
-#### [3 Object Types](https://github.com/luciotbc/react-cwb4-flow-examples/pull/3/files)
-##### Create Video Type
+### [3 Object Types](https://github.com/luciotbc/react-cwb4-flow-examples/pull/3/files)
+Create Video Type
 ```
 type Video = {
   snippet: {
@@ -43,18 +52,18 @@ type Video = {
   }
 };
 ```
-##### Add Video Type to props
+Add Video Type to props
 ```
 type Porps = {
   video: Video,
   onVideoSelect: Video => void
 };
 ```
-##### Ref props types in a function
+Ref props types in a function
 `const VideoListItem = ({ video, onVideoSelect }: Porps) => {...`
 
-#### [4 Array Types](https://github.com/luciotbc/react-cwb4-flow-examples/pull/4/files)
-##### Create Video Type
+### [4 Array Types](https://github.com/luciotbc/react-cwb4-flow-examples/pull/4/files)
+Create Video Type
 ```
 type Video = {
   etag: string,
@@ -74,8 +83,8 @@ type Props = {
 };
 ```
 
-#### [5 Module Types](https://github.com/luciotbc/react-cwb4-flow-examples/pull/5/files)
-##### Export shared types
+### [5 Module Types](https://github.com/luciotbc/react-cwb4-flow-examples/pull/5/files)
+Export shared types
 ```
 //@flow
 export type Video = {
@@ -90,16 +99,16 @@ export type Video = {
   }
 };
 ```
-##### Import shared types
+Import shared types
 `
 import type { Video } from '../model'
 `
 
-#### [6 Flow in everywhere](https://github.com/luciotbc/react-cwb4-flow-examples/pull/6/files)
+### [6 Flow in everywhere](https://github.com/luciotbc/react-cwb4-flow-examples/pull/6/files)
 ![flow everywhere](https://i.imgflip.com/1uyk9c.jpg)
 
-#### [7 Add JsEvents](https://github.com/luciotbc/react-cwb4-flow-examples/pull/7/files)
-##### To Clicks
+### [7 Add JsEvents](https://github.com/luciotbc/react-cwb4-flow-examples/pull/7/files)
+To Clicks
 ```
   const videoSelected = (e: SyntheticEvent<EventTarget>) => {
     e.preventDefault();
@@ -108,7 +117,7 @@ import type { Video } from '../model'
 
 };
 ```
-##### To Inputs
+To Inputs
 ```
   videoSelected = (e: SyntheticInputEvent<EventTarget>) => {
     e.preventDefault();
