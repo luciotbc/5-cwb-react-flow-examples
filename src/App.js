@@ -1,25 +1,34 @@
-import React, { Component } from 'react';
+//@flow
+import React from 'react';
 
 import _ from 'lodash';
 import YTSearch from 'youtube-api-search';
 import SearchBar from './components/search_bar';
 import VideoList from './components/video_list';
 import VideoDetail from './components/video_detail';
+import type { Video } from './model';
+
 const API_KEY = 'AIzaSyAuQCVeNfKhtRk9KlChQPT1nO27DPO_5Ss';
 
-class App extends Component {
-  constructor(props) {
+type Props = {};
+
+type State = {
+  videos: Array<Video>,
+  selectedVideo?: Video
+};
+
+class App extends React.Component<Props, State> {
+  state = {
+    videos: [],
+    selectedVideo: undefined
+  };
+
+  constructor(props: Props) {
     super(props);
-
-    this.state = {
-      videos: [],
-      selectedVideo: null
-    };
-
-    this.videoSearch('surfboards');
+    this.videoSearch('react conf');
   }
 
-  videoSearch(term) {
+  videoSearch(term: string) {
     YTSearch({ key: API_KEY, term: term }, videos => {
       this.setState({
         videos: videos,

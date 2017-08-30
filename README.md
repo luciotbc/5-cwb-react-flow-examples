@@ -94,3 +94,8 @@ export type Video = {
 `
 import type { Video } from '../model'
 `
+
+### 6 [Flow in everywhere](https://github.com/luciotbc/react-cwb4-flow-examples/pull/6/files)
+#### Coding =)
+![flow everywhere](https://i.imgflip.com/1uyk9c.jpg)
+
