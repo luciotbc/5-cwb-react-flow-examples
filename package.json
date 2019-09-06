@@ -16,6 +16,6 @@
     "eject": "react-scripts eject"
   },
   "devDependencies": {
-    "flow-bin": "^0.101.1"
+    "flow-bin": "^0.107.0"
   }
 }
