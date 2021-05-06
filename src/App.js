@@ -8,7 +8,7 @@ import VideoList from './components/video_list';
 import VideoDetail from './components/video_detail';
 import type { Video } from './model';
 
-const API_KEY = 'AIzaSyAuQCVeNfKhtRk9KlChQPT1nO27DPO_5Ss';
+const API_KEY = '***REMOVED***';
 
 type Props = {};
 
